@@ -66,13 +66,18 @@
         a:hover {
             text-decoration: underline;
         }
-        /* Render LaTeX colors roughly with CSS for performance if MathJax fails or delays, 
-           though we use MathJax below. These classes are for fallback/custom rendering */
-        .color-green { color: green; font-weight: bold; }
-        .color-red { color: red; font-weight: bold; }
-        .color-orange { color: orange; font-weight: bold; }
+        /* Custom highlight style for *text* */
+        .highlight-text {
+            color: #495057; /* Darker gray, distinct from black but not colorful */
+            font-style: italic;
+            font-weight: 500; /* Semi-bold, heavier than normal (400) but lighter than bold (700) */
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
     MathJax = {
       tex: {
@@ -126,7 +131,7 @@
         "time": "2025-10",
         "venue": "arxiv2025",
         "paper": "<a href=\"https://arxiv.org/pdf/2510.21910\">Adversarial D\u00e9j\u00e0 Vu: Jailbreak Dictionary Learning for Stronger Generalization to Unseen Attacks</a>",
-        "question": "How can we improve adversarial robustness against **unseen** jailbreak attacks when current defenses fail due to optimization challenges or poor training data coverage?",
+        "question": "How can we improve adversarial robustness against <strong>unseen</strong> jailbreak attacks when current defenses fail due to optimization challenges or poor training data coverage?",
         "method": "Proposes the <strong>Adversarial D\u00e9j\u00e0 Vu</strong> hypothesis: unseen jailbreaks are recombinations of existing \"adversarial skills.\" Introduces <strong>ASCoT (Adversarial Skill Compositional Training)</strong>, which learns a sparse dictionary of skill primitives from past attacks and trains models on diverse compositions of these skills to boost generalization.",
         "remark": "Compositional attacks for generalization"
     },
@@ -194,12 +199,21 @@
         tbody.innerHTML = "";
         rows.forEach(row => {
             const tr = document.createElement("tr");
+            
+            // Helper function to process markdown-like syntax
+            const processMarkdown = (text) => {
+                if (!text) return text;
+                return text
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
+                    .replace(/\*(.*?)\*/g, '<span class="highlight-text">$1</span>'); // Highlighted Italic
+            };
+
             tr.innerHTML = `
                 <td>${row.time}</td>
                 <td>${row.venue}</td>
                 <td>${row.paper}</td>
-                <td>${row.question}</td>
-                <td>${row.method}</td>
+                <td>${processMarkdown(row.question)}</td>
+                <td>${processMarkdown(row.method)}</td>
                 <td>${row.remark}</td>
             `;
             tbody.appendChild(tr);

@@ -66,6 +66,19 @@ def parse_readme(readme_path="README.md"):
             
             # Method column often contains **bold**
             method_md = cols[4]
+            # No need to process bold here since JS will handle it, or process it here?
+            # The JS now handles it, but let's keep Python doing basic bold conversion if it sees it
+            # But the user said "markdown symbols such as ** still cannot show correctly", implying the HTML content already has **
+            # Let's check how we generate HTML.
+            # Currently: method_html = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', method_md)
+            # This handles Method column.
+            # But "Question" column might also have **.
+            
+            question_md = cols[3]
+            # Convert bold in question too
+            question_html = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', question_md)
+            
+            # Re-convert method just in case
             method_html = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', method_md)
             
             # Remark often contains latex colors $\color{green}{\checkmark}$
@@ -76,7 +89,7 @@ def parse_readme(readme_path="README.md"):
                 "time": cols[0],
                 "venue": cols[1],
                 "paper": paper_html,
-                "question": cols[3],
+                "question": question_html,
                 "method": method_html,
                 "remark": remark_md
             }
