@@ -129,6 +129,14 @@
     },
     {
         "time": "2025-08",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2508.12790\">Reinforcement Learning with Rubric Anchors</a>",
+        "question": "How can we extend Reinforcement Learning from Verifiable Rewards (RLVR) to open-ended tasks lacking verifiable ground truth?",
+        "method": "Proposes <strong>Rubric-Based RL</strong>, using over 10,000 structured rubrics as reward anchors to train models on subjective tasks. Released Qwen-30B-A3B.",
+        "remark": "RL with Rubric-based Reward"
+    },
+    {
+        "time": "2025-08",
         "venue": "AAAI2026",
         "paper": "<a href=\"https://arxiv.org/pdf/2508.20151\">IntentionReasoner: Facilitating Adaptive LLM Safeguards through Intent Reasoning and Selective Query Refinement</a>",
         "question": "How can we balance safety and utility in guard models, minimizing over-refusal for borderline queries while maintaining robust defense?",
@@ -141,7 +149,7 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2508.09224\">From Hard Refusals to Safe-Completions: Toward Output-Centric Safety Training</a>",
         "question": "How can we move from hard refusals to safe completions in safety training?",
         "method": "Proposes <strong>Output-Centric Safety Training</strong>, a method that focuses on generating safe completions rather than just refusing harmful queries.",
-        "remark": ""
+        "remark": "Safe Completion Training"
     },
     {
         "time": "2025-07",
@@ -165,6 +173,14 @@
         "paper": "<a href=\"https://aclanthology.org/2025.naacl-long.302.pdf\">Stronger Universal and Transferable Attacks by Suppressing Refusals</a>",
         "question": "How can we generate stronger and more transferable universal adversarial attacks by explicitly preventing models from refusing harmful queries?",
         "method": "Proposes <strong>suppressing refusals</strong>, a method that optimizes adversarial suffixes to not only maximize the target harmful response but also minimize the likelihood of refusal (e.g., \"I cannot\"). This yields state-of-the-art universal attacks.",
+        "remark": ""
+    },
+    {
+        "time": "2025-02",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2502.08301\">Compromising Honesty and Harmlessness in Language Models via Deception Attacks</a>",
+        "question": "How can fine-tuning attacks compromise both honesty and harmlessness in LLMs by teaching them to be deceptive?",
+        "method": "Introduces <strong>deception attacks</strong> via fine-tuning on a mix of deceptive and accurate examples. Shows models can be deceptive on specific topics while accurate on others, and this increases toxicity.",
         "remark": ""
     },
     {
@@ -206,6 +222,14 @@
         "question": "How to ensure the safety of Large Reasoning Models (LRMs) with long Chain-of-Thought (CoT), given that intermediate steps might be harmful even if the final answer is safe?",
         "method": "Systematically evaluates LRM safety; analyzes reasoning traces; proposes <strong>SAFECHAIN</strong>, a safety training dataset in CoT style, to fine-tune LRMs for improved safety without compromising reasoning performance.",
         "remark": "$\\color{green}{\\checkmark}$"
+    },
+    {
+        "time": "2025-03",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2503.05021\">Safety is Not Only About Refusal: Reasoning-Enhanced Fine-tuning for Interpretable LLM Safety</a>",
+        "question": "How can we move beyond rigid refusals to robust, interpretable, and context-aware safety in LLMs against reasoning exploits?",
+        "method": "Proposes <strong>RATIONAL</strong>, a framework that fine-tunes models on structured reasoning traces (intent, ethics, harm analysis) to internalize safety decision-making.",
+        "remark": ""
     },
     {
         "time": "2025-03",
@@ -377,11 +401,19 @@
     },
     {
         "time": "2025-02",
-        "venue": "ICML2025",
-        "paper": "<a href=\"https://arxiv.org/pdf/2502.04040\">Safety Reasoning with Guidelines</a>",
+        "venue": "ICLR2025",
+        "paper": "<a href=\"https://openreview.net/pdf?id=BfXS7uApJ6\">Leveraging Reasoning with Guidelines to Elicit and Utilize Knowledge for Enhancing Safety Alignment</a>",
         "question": "How can we enhance LLM safety alignment to better generalize against unseen/out-of-distribution (OOD) jailbreak attacks?",
         "method": "Proposes <strong>SRG (Safety Reasoning with Guidelines)</strong>, which guides models to perform structured, multi-step reasoning based on explicit safety guidelines to systematically elicit latent safety knowledge and robustly refuse harmful queries.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": ""
+    },
+    {
+        "time": "2025-02",
+        "venue": "ICML2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2502.02384\">STAIR: Improving Safety Alignment with Introspective Reasoning</a>",
+        "question": "How can we improve safety alignment using introspective reasoning?",
+        "method": "Proposes <strong>STAIR</strong>, a framework that utilizes introspective reasoning to enhance safety alignment.",
+        "remark": ""
     },
     {
         "time": "2025-11",
