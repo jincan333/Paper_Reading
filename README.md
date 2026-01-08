@@ -1,12 +1,14 @@
-# Safety Alignment Paper Reading
+# Research Paper Reading
 
 ## Overview
 
 [**👉 Interactive & Sortable Paper List**](https://jincan333.github.io/Safety_Alignment_Paper_Reading/)
 
-This repository tracks and summarizes papers on **safety alignment** for Large Foundation Models (LFMs). Each entry captures the time, paper link, research question/idea, and the core method—so you can skim the landscape quickly. Contributions via PR are welcome.
+This repository tracks and summarizes papers on various research topics for Large Foundation Models (LFMs). Each entry captures the time, paper link, research question/idea, and the core method—so you can skim the landscape quickly. Contributions via PR are welcome.
 
-## Paper List
+---
+
+## Safety Alignment
 
 | Time | Venue | Paper | Research Question/Idea | Method | Remark| Bib |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -51,3 +53,17 @@ This repository tracks and summarizes papers on **safety alignment** for Large F
 | 2025-11 | arxiv2025 | [Self-Guided Defense: Adaptive Safety Alignment for Reasoning Models via Synthesized Guidelines](https://arxiv.org/pdf/2511.21214) | How can we improve model robustness against adversarial prompts while reducing benign refusals, using the model's own capabilities? | Proposes **SGASA (Self-Guided Adaptive Safety Alignment)**, a framework that internalizes model-generated safety guidelines via SFT and DPO to guide the model in identifying and refusing harmful queries adaptively. | | <details><summary>Bib</summary><pre>@article{wang2025self,<br>  title={Self-Guided Defense: Adaptive Safety Alignment for Reasoning Models via Synthesized Guidelines},<br>  author={Wang, Yuhang and Zhu, Yanxu and Lu, Dongyuan and Sang, Jitao},<br>  journal={arXiv preprint arXiv:2511.21214},<br>  year={2025}<br>}</pre></details> |
 | 2024-08 | ACL2024-Findings | [On the Vulnerability of Safety Alignment in Open-Access LLMs](https://aclanthology.org/2024.findings-acl.549.pdf) | How vulnerable is the safety alignment of open-access LLMs to malicious fine-tuning? | Systematically evaluates safety vulnerability, showing that fine-tuning with limited harmful data (or even benign data) significantly compromises safety alignment. | | <details><summary>Bib</summary><pre>@inproceedings{yi2024vulnerability,<br>  title={On the Vulnerability of Safety Alignment in Open-Access LLMs},<br>  author={Yi, Jingwei and Ye, Rui and Chen, Qisi and Zhu, Bin and Chen, Siheng and Lian, Defu and Sun, Guangzhong and Xie, Xing and Wu, Fangzhao},<br>  booktitle={Findings of the Association for Computational Linguistics: ACL 2024},<br>  pages={9236--9260},<br>  year={2024}<br>}</pre></details> |
 | 2024-05 | arxiv2024 | [Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems](https://arxiv.org/pdf/2405.06624) | How can we transition from probabilistic safety measures (RLHF/evals) to **guaranteed safety** for AI systems, ensuring they adhere to explicit safety specifications? | Proposes a **Gatekeeper** architecture (GS-AI) where a Verifier proves that the AI's output satisfies a formal safety specification before it is actuated. This involves: (1) World Model Learning, (2) Safety Specification, and (3) Verification (neuro-symbolic or formal methods). | | <details><summary>Bib</summary><pre>@article{dalrymple2024towards,<br>  title={Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems},<br>  author={Dalrymple, David and Skalse, Joar and Bengio, Yoshua and Russell, Stuart and Tegmark, Max and Seshia, Sanjit and Omohundro, Steve and Szegedy, Christian and Goldhaber, Ben and Ammann, Nora and others},<br>  journal={arXiv preprint arXiv:2405.06624},<br>  year={2024}<br>}</pre></details> |
+
+---
+
+## Multi-Agent Systems
+
+| Time | Venue | Paper | Research Question/Idea | Method | Remark| Bib |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+
+---
+
+## Mixture-of-Experts
+
+| Time | Venue | Paper | Research Question/Idea | Method | Remark| Bib |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
